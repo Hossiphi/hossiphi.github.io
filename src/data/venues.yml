@@ -1,28 +1,84 @@
-# Venue badges, keyed by the `abbr` field in papers.bib. DEMO CONTENT — edition
-# series, because the demo bibliography is classical. An abbr with no row here
-# FAILS THE BUILD: content.config.ts declares it as reference('venues'), so a
-# typo is a build error naming the BibTeX key. A paper with no abbr renders
-# without a badge, which is fine.
+# Venue badges, keyed by the `abbr` field in papers.bib. An abbr with no row here
+# FAILS THE BUILD (content.config.ts declares it as reference('venues')).
 #
 # `color` is the venue's own brand hex, pasted as-is: VenueBadge.astro mixes it
-# toward white for the label and toward the page for the fill. Do not pre-lighten.
+# toward white for the label and toward the page for the fill.
 
-LCL:
-  name: Loeb Classical Library
-  url: https://www.loebclassics.com/
-  color: '#8b2332'
+ICSE:
+  name: International Conference on Software Engineering
+  url: https://conf.researchr.org/series/icse
+  color: '#1f6fb2'
 
-OCT:
-  name: Oxford Classical Texts
-  url: https://global.oup.com/academic/content/series/o/oxford-classical-texts-oct/
-  # Oxford blue: too dark to read as text here, left unaltered to prove the point.
-  color: '#002147'
+ICSA:
+  name: IEEE International Conference on Software Architecture
+  url: https://conf.researchr.org/series/icsa
+  color: '#e07a1f'
 
-CUP:
-  name: Cambridge Texts in the History of Political Thought
-  url: https://www.cambridge.org/
-  color: '#d6083b'
+ICSA-C:
+  name: IEEE International Conference on Software Architecture Companion
+  url: https://conf.researchr.org/series/icsa
+  color: '#b8860b'
 
-Teubner:
-  name: Bibliotheca Teubneriana
-  color: '#4a5c3d'
+ECSA:
+  name: European Conference on Software Architecture
+  url: https://conf.researchr.org/series/ecsa
+  color: '#2e8b57'
+
+ASE:
+  name: IEEE/ACM International Conference on Automated Software Engineering
+  url: https://conf.researchr.org/series/ase
+  color: '#7b3fa0'
+
+RE:
+  name: IEEE International Requirements Engineering Conference
+  url: https://requirements-engineering.org/
+  color: '#c0392b'
+
+EASE:
+  name: International Conference on Evaluation and Assessment in Software Engineering
+  url: https://conf.researchr.org/series/ease
+  color: '#16a085'
+
+SE:
+  name: Software Engineering (GI Fachtagung)
+  url: https://fb-swt.gi.de/
+  color: '#0077b6'
+
+E-Energy:
+  name: ACM International Conference on Future and Sustainable Energy Systems
+  url: https://energy.acm.org/
+  color: '#3a9d23'
+
+TAAS:
+  name: ACM Transactions on Autonomous and Adaptive Systems
+  url: https://dl.acm.org/journal/taas
+  color: '#0085ca'
+
+SSP:
+  name: Symposium on Software Performance
+  url: https://www.performance-symposium.org/
+  color: '#8e5c2a'
+
+ICSC:
+  name: IEEE International Conference on Semantic Computing
+  url: https://www.ieee-icsc.org/
+  color: '#00629b'
+
+CDKE:
+  name: IEEE International Conference on Conversational Data & Knowledge Engineering
+  color: '#5b6abf'
+
+arXiv:
+  name: arXiv preprint
+  url: https://arxiv.org/
+  color: '#b31b1b'
+
+KIT:
+  name: Karlsruhe Institute of Technology (KIT)
+  url: https://www.kit.edu/
+  color: '#009682'
+
+MSc:
+  name: Master's thesis, Karlsruhe Institute of Technology (KIT)
+  url: https://www.kit.edu/
+  color: '#009682'

@@ -1,55 +1,59 @@
-# Every author who appears anywhere on the site: in a publication's author
-# list, on a paper page, or as a member in people.yml. DEMO CONTENT.
-#
-# The key is what everything else references. `orcid` may be null — it renders
-# as a link beside the name when set and is omitted when not, the common case
-# for historical figures. Adding a co-author is one row here and nothing else.
+# Authors referenced by the paper pages in src/content/papers/ (their bylines
+# link to ORCID when one is set). Add a row when a new paper page names someone
+# not listed here. ORCIDs as on ardoco.de.
 
-cicero:
-  name: Marcus Tullius Cicero
+sophie_corallo:
+  name: Sophie Corallo
+  orcid: '0000-0002-1531-2977'
+
+anne_koziolek:
+  name: Anne Koziolek
+  orcid: '0000-0002-1593-3394'
+
+debora_grupp:
+  name: Debora Grupp
   orcid: null
 
-# --- Cicero's circle -------------------------------------------------------
-atticus:
-  name: Titus Pomponius Atticus
+dominik_fuchss:
+  name: Dominik Fuchß
+  orcid: '0000-0001-6410-6769'
+
+frederik_reiche:
+  name: Frederik Reiche
   orcid: null
 
-tiro:
-  name: Marcus Tullius Tiro
+haoyu_liu:
+  name: Haoyu Liu
+  orcid: '0009-0002-7676-5010'
+
+jan_keim:
+  name: Jan Keim
+  orcid: '0000-0002-8899-7081'
+
+johannes_von_geisau:
+  name: Johannes von Geisau
   orcid: null
 
-quintus:
-  name: Quintus Tullius Cicero
+julian_winter:
+  name: Julian Winter
   orcid: null
 
-# --- modern editors and translators, from the entries in papers.bib --------
-keyes:
-  name: Clinton Walker Keyes
+kevin_feichtinger:
+  name: Kevin Feichtinger
+  orcid: '0000-0003-1182-5377'
+
+tobias_hey:
+  name: Tobias Hey
+  orcid: '0000-0003-0381-1020'
+
+kathrin_schmidt:
+  name: Kathrin Leonie Schmidt
   orcid: null
 
-miller:
-  name: Walter Miller
+lars_koenig:
+  name: Lars König
   orcid: null
 
-rackham:
-  name: Harris Rackham
+thomas_weber:
+  name: Thomas Weber
   orcid: null
-
-sutton:
-  name: Edward William Sutton
-  orcid: null
-
-king:
-  name: John Edward King
-  orcid: null
-
-shackleton_bailey:
-  name: David Roy Shackleton Bailey
-  orcid: null
-
-# The one invented person here, and the only author with an ORCID, so that the
-# ORCID link and a fully-populated /people/ entry have something to render. The
-# id is ORCID's fictional demo researcher and resolves; replace it with yours.
-marek:
-  name: Livia Marek
-  orcid: 0000-0002-1825-0097

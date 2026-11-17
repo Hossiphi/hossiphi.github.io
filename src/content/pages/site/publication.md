@@ -29,6 +29,7 @@ linkLabels:
   preprint: 'Preprint'
   zenodo: 'Zenodo'
   repo: 'Repository'
+  kitopen: 'KITopen'
   data: 'Data'
   loeb: 'Loeb'
   archive: 'Internet Archive'

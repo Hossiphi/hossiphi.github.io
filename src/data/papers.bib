@@ -1,173 +1,349 @@
 % The bibliography. Everything on /publications/ is derived from this file.
 %
-% Three of the fields used below are Studia Theme's, not BibTeX's. They are
-% stripped from the citation a reader copies, and each is checked at build time:
+% Studia fields (stripped from the citation a reader copies, checked at build):
+%   abbr   the venue badge, looked up in src/data/venues.yml
+%   pdf    a file under public/assets/pdf/, or an absolute URL
 %
-%   abbr   the venue badge, looked up in src/data/venues.yml. An abbr with no
-%          row there fails the build. Leave it out — as the last entry does —
-%          and the publication simply renders without a badge.
-%   pdf    a file under public/assets/pdf/, or an absolute URL. A relative path
-%          that is not on disk fails the build.
-%   page   this work's own page, /papers/<slug>/. It must have a matching
-%          src/content/papers/<slug>.md, or the build fails.
-%
-% See docs/Content.md. The wiring is in src/content.config.ts.
-%
-% ─────────────────────────────────────────────────────────────────────────────
-% DEMO CONTENT — replace the whole file.
-%
-% The works of Marcus Tullius Cicero (106-43 BC), cited the way a classicist
-% actually would: the entry is the modern critical edition or translation, so
-% `year` is the edition's and the ancient composition date goes in `note`.
-% That also keeps the year buckets on /publications/ sensible, which "45 BC"
-% would not.
-%
-% The DOIs use the 10.5555 prefix, which the DOI registry reserves for
-% examples. They are syntactically valid and cannot collide with a real record,
-% so the DOI chips here have something to render — but `npm run bib:check`
-% will report them as not found at Crossref. That is correct: they are not
-% registered. Replace them along with everything else.
-% ─────────────────────────────────────────────────────────────────────────────
+% Entries were created from the DOI registry (doi.org content negotiation) and
+% cross-checked against ORCID 0000-0002-1531-2977. Papers before 2023 credit
+% the author as "Schulz, Sophie"; SELF.surnames in src/consts.ts covers both.
 
-@book{cicero_de_re_publica_1928,
-  abbr         = {LCL},
-  title        = {De Re Publica. De Legibus},
-  author       = {Cicero, Marcus Tullius and Keyes, Clinton Walker},
-  publisher    = {Harvard University Press},
-  series       = {Loeb Classical Library},
-  volume       = {213},
-  year         = {1928},
-  location     = {Cambridge, MA},
-  note         = {Composed c. 54-51 BC},
-  doi          = {10.5555/lcl.213.1928},
-  pdf          = {editions/de-re-publica-excerpt.pdf},
-  page         = {/papers/de-re-publica/},
-  keywords     = {political philosophy, natural law, the mixed constitution},
-  google_scholar_id = {qXqzPbLUKZkC},
+% ── 2026 ─────────────────────────────────────────────────────────────────────
+
+@article{fuchss_whos_who_2026,
+  abbr      = {TAAS},
+  title     = {Who's Who? {LLM}-assisted Software Traceability with Architecture Entity Recognition},
+  author    = {Fuchß, Dominik and Liu, Haoyu and Corallo, Sophie and Hey, Tobias and Keim, Jan and von Geisau, Johannes and Koziolek, Anne},
+  journal   = {ACM Transactions on Autonomous and Adaptive Systems},
+  publisher = {ACM},
+  year      = {2026},
+  doi       = {10.1145/3807453},
+  page              = {/papers/whos-who/},
+  google_scholar_id = {MXK_kJrjxJIC},
 }
 
-@book{cicero_de_officiis_1913,
-  abbr         = {LCL},
-  title        = {De Officiis},
-  author       = {Cicero, Marcus Tullius and Miller, Walter},
-  publisher    = {Harvard University Press},
-  series       = {Loeb Classical Library},
-  volume       = {30},
-  year         = {1913},
-  location     = {Cambridge, MA},
-  note         = {Composed 44 BC},
-  doi          = {10.5555/lcl.030.1913},
-  page         = {/papers/de-officiis/},
-  keywords     = {ethics, duty, Stoicism},
+@inproceedings{corallo_everest_dataset_2026,
+  abbr      = {ASE},
+  title     = {The {EVerest} Dataset for Secure Software Engineering},
+  author    = {Corallo, Sophie and Grupp, Debora and Fuchß, Dominik and Keim, Jan and Reiche, Frederik and Hey, Tobias and Koziolek, Anne},
+  booktitle = {Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering},
+  series    = {ASE '26},
+  publisher = {ACM},
+  pages     = {3454--3458},
+  year      = {2026},
+  doi       = {10.1145/3832783.3834614},
+  page              = {/papers/everest-dataset/},
+  google_scholar_id = {YOwf2qJgpHMC},
+}
+
+@inproceedings{keim_ardoco_tool_landscape_2026,
+  abbr      = {ASE},
+  title     = {The {ARDoCo} Tool Landscape: {REST} {API}, {TraceView}, and {TraceViz} for Architecture Traceability},
+  author    = {Keim, Jan and Fuchß, Dominik and Corallo, Sophie and Hey, Tobias and Winter, Julian and Feichtinger, Kevin},
+  booktitle = {Proceedings of the 41st IEEE/ACM International Conference on Automated Software Engineering},
+  series    = {ASE '26},
+  publisher = {ACM},
+  pages     = {3488--3491},
+  year      = {2026},
+  doi       = {10.1145/3832783.3834621},
+  page              = {/papers/ardoco-tool-landscape/},
+  google_scholar_id = {_kc_bZDykSQC},
+}
+
+@inproceedings{hummel_autopcm_2026,
+  abbr      = {ECSA},
+  title     = {{AutoPCM}: Automated Generation of Architectural Performance Models from Early Design Artifacts Using {LLM} Agents},
+  author    = {Hummel, Maximilian and Fuchß, Dominik and Corallo, Sophie and Hagel, Nathan and Keim, Jan and Koziolek, Heiko and Reussner, Ralf},
+  booktitle = {Software Architecture (ECSA 2026)},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer Nature Switzerland},
+  pages     = {122--138},
+  year      = {2026},
+  doi       = {10.1007/978-3-032-39236-7_9},
+  google_scholar_id = {ULOm3_A8WrAC},
+}
+
+@inproceedings{liu_archguard_2026,
+  abbr      = {ICSA},
+  title     = {Architecture in the Cradle: Early Warning of Architectural Decay with {ArchGuard}},
+  author    = {Liu, Haoyu and Fuchß, Dominik and Corallo, Sophie and Hummel, Maximilian and Keim, Jan and Hey, Tobias},
+  booktitle = {2026 IEEE 23rd International Conference on Software Architecture (ICSA)},
+  publisher = {IEEE},
+  pages     = {44--55},
+  year      = {2026},
+  doi       = {10.1109/ICSA66085.2026.00011},
+  google_scholar_id = {3fE2CSJIrl8C},
+}
+
+@inproceedings{hummel_garma_2026,
+  abbr      = {ICSA-C},
+  title     = {{GARMA}: Generative Architectural Resource Demand Estimation for Microservice Applications},
+  author    = {Hummel, Maximilian and Fuchß, Dominik and Corallo, Sophie and Hagel, Nathan and Kaushik, Minakshi and Keim, Jan and Reussner, Ralf and Koziolek, Heiko},
+  booktitle = {2026 IEEE 23rd International Conference on Software Architecture Companion (ICSA-C)},
+  publisher = {IEEE},
+  pages     = {441--448},
+  year      = {2026},
+  doi       = {10.1109/ICSA-C68850.2026.00084},
+  google_scholar_id = {kNdYIx-mwKoC},
+}
+
+@misc{peldszus_security_design_dsls_2026,
+  abbr      = {arXiv},
+  title     = {Can I Check What I Designed? Mapping Security Design {DSLs} to Code Analyzers},
+  author    = {Peldszus, Sven and Reiche, Frederik and Hermann, Kevin and Corallo, Sophie and Berger, Thorsten and Heinrich, Robert},
+  publisher = {arXiv},
+  year      = {2026},
+  doi       = {10.48550/arXiv.2605.07814},
+  google_scholar_id = {Zph67rFs4hoC},
+}
+
+% ── 2025 ─────────────────────────────────────────────────────────────────────
+
+@inproceedings{elbez_smart_grid_testbed_2025,
+  abbr      = {E-Energy},
+  title     = {Insights and Lessons Learned from a Realistic Smart Grid Testbed for Cybersecurity Research},
+  author    = {Elbez, Ghada and Sánchez, Gustavo and Canbolat, Sine and Corallo, Sophie and Fruböse, Clemens and Lanzinger, Florian and Kellerer, Nicolai and Keppler, Gustav and Neumeister, Felix and Beckert, Bernhard and Koziolek, Anne and Zitterbart, Martina and Hagenmeyer, Veit},
+  booktitle = {Proceedings of the 16th ACM International Conference on Future and Sustainable Energy Systems},
+  series    = {E-Energy '25},
+  publisher = {ACM},
+  pages     = {805--812},
+  year      = {2025},
+  doi       = {10.1145/3679240.3734649},
+  google_scholar_id = {0EnyYjriUFMC},
+}
+
+@inproceedings{keim_trace_links_doc_code_se_2025,
+  abbr      = {SE},
+  title     = {Recovering Trace Links Between Software Documentation And Code},
+  author    = {Keim, Jan and Corallo, Sophie and Fuchß, Dominik and Hey, Tobias and Telge, Tobias and Koziolek, Anne},
+  booktitle = {Software Engineering 2025},
+  publisher = {Gesellschaft für Informatik, Bonn},
+  year      = {2025},
+  doi       = {10.18420/se2025-24},
+}
+
+@inproceedings{hey_requirements_classification_se_2025,
+  abbr      = {SE},
+  title     = {Requirements Classification for Traceability Link Recovery},
+  author    = {Hey, Tobias and Keim, Jan and Corallo, Sophie},
+  booktitle = {Software Engineering 2025},
+  publisher = {Gesellschaft für Informatik, Bonn},
+  year      = {2025},
+  doi       = {10.18420/se2025-25},
+}
+
+@misc{schmid_sa_meets_llms_2025,
+  abbr      = {arXiv},
+  title     = {Software Architecture Meets {LLMs}: A Systematic Literature Review},
+  author    = {Schmid, Larissa and Hey, Tobias and Armbruster, Martin and Corallo, Sophie and Fuchß, Dominik and Keim, Jan and Liu, Haoyu and Koziolek, Anne},
+  publisher = {arXiv},
+  year      = {2025},
+  doi       = {10.48550/arXiv.2505.16697},
+  google_scholar_id = {UebtZRa9Y70C},
+}
+
+% ── 2024 ─────────────────────────────────────────────────────────────────────
+
+@inproceedings{keim_trace_links_doc_code_2024,
+  abbr      = {ICSE},
+  title     = {Recovering Trace Links Between Software Documentation And Code},
+  author    = {Keim, Jan and Corallo, Sophie and Fuchß, Dominik and Hey, Tobias and Telge, Tobias and Koziolek, Anne},
+  booktitle = {Proceedings of the IEEE/ACM 46th International Conference on Software Engineering},
+  series    = {ICSE '24},
+  publisher = {ACM},
+  pages     = {1--13},
+  year      = {2024},
+  doi       = {10.1145/3597503.3639130},
+  google_scholar_id = {LkGwnXOMwfcC},
+}
+
+@inproceedings{corallo_security_assumptions_2024,
+  abbr      = {ICSE},
+  title     = {What do you assume? A Theory of Security-Related Assumptions},
+  author    = {Corallo, Sophie and Weber, Thomas and König, Lars and Schmidt, Kathrin Leonie and Reiche, Frederik and Koziolek, Anne},
+  booktitle = {Proceedings of the 2024 IEEE/ACM 46th International Conference on Software Engineering: Companion Proceedings},
+  series    = {ICSE-Companion '24},
+  publisher = {ACM},
+  pages     = {278--279},
+  year      = {2024},
+  doi       = {10.1145/3639478.3643070},
+  page              = {/papers/security-assumptions/},
+  google_scholar_id = {Se3iqnhoufwC},
+}
+
+@inproceedings{hey_requirements_classification_2024,
+  abbr      = {RE},
+  title     = {Requirements Classification for Traceability Link Recovery},
+  author    = {Hey, Tobias and Keim, Jan and Corallo, Sophie},
+  booktitle = {2024 IEEE 32nd International Requirements Engineering Conference (RE)},
+  publisher = {IEEE},
+  pages     = {155--167},
+  year      = {2024},
+  doi       = {10.1109/RE59067.2024.00024},
+  google_scholar_id = {roLk4NBRz8UC},
+}
+
+@inproceedings{keim_inconsistencies_se_2024,
+  abbr      = {SE},
+  title     = {Detecting Inconsistencies in Software Architecture Documentation Using Traceability Link Recovery},
+  author    = {Keim, Jan and Corallo, Sophie and Fuchß, Dominik and Koziolek, Anne},
+  booktitle = {Software Engineering 2024},
+  publisher = {Gesellschaft für Informatik e.V.},
+  pages     = {119--120},
+  year      = {2024},
+  doi       = {10.18420/sw2024_37},
+}
+
+% ── 2023 ─────────────────────────────────────────────────────────────────────
+
+@inproceedings{keim_inconsistencies_2023,
+  abbr      = {ICSA},
+  title     = {Detecting Inconsistencies in Software Architecture Documentation Using Traceability Link Recovery},
+  author    = {Keim, Jan and Corallo, Sophie and Fuchß, Dominik and Koziolek, Anne},
+  booktitle = {2023 IEEE 20th International Conference on Software Architecture (ICSA)},
+  publisher = {IEEE},
+  pages     = {141--152},
+  year      = {2023},
+  doi       = {10.1109/ICSA56044.2023.00021},
+  google_scholar_id = {WF5omc3nYNoC},
+}
+
+@inproceedings{fuchss_benchmark_tlr_2023,
+  abbr      = {ECSA},
+  title     = {Establishing a Benchmark Dataset for Traceability Link Recovery Between Software Architecture Documentation and Models},
+  author    = {Fuchß, Dominik and Corallo, Sophie and Keim, Jan and Speit, Janek and Koziolek, Anne},
+  booktitle = {Software Architecture. ECSA 2022 Tracks and Workshops},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer International Publishing},
+  pages     = {455--464},
+  year      = {2023},
+  doi       = {10.1007/978-3-031-36889-9_30},
+  google_scholar_id = {eQOLeE2rZwMC},
+}
+
+@techreport{kuehn_consistency_schema_2023,
+  abbr        = {KIT},
+  title       = {A Formalized Classification Schema for Model Consistency},
+  author      = {Kühn, Thomas and Fuchß, Dominik and Corallo, Sophie and König, Lars and Burger, Erik and Keim, Jan and Mazkatli, Manar and Sağlam, Timur and Reiche, Frederik and Koziolek, Anne and Reussner, Ralf},
+  institution = {Karlsruhe Institute of Technology (KIT)},
+  year        = {2023},
+  doi         = {10.5445/IR/1000161127},
+  google_scholar_id = {hqOjcs7Dif8C},
+}
+
+% ── 2022 ─────────────────────────────────────────────────────────────────────
+
+@inproceedings{corallo_women_in_academia_2022,
+  abbr      = {ECSA},
+  title     = {Toward Awareness Creation of Common Challenges Women are Facing in Academia: A Study from a {German} Perspective},
+  author    = {Corallo, Sophie and Mazkatli, Manar and Rapp, Martina and Hajiabadi, Hamideh and Kaplan, Angelika and Kuehn, Romina and Schmid, Larissa and Singh, Snigdha},
+  booktitle = {Software Architecture. ECSA 2021 Tracks and Workshops},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer International Publishing},
+  pages     = {47--62},
+  year      = {2022},
+  doi       = {10.1007/978-3-031-15116-3_3},
+  google_scholar_id = {_FxGoFyzp5QC},
+}
+
+@inproceedings{konersmann_evaluation_methods_2022,
+  abbr      = {ICSA},
+  title     = {Evaluation Methods and Replicability of Software Architecture Research Objects},
+  author    = {Konersmann, Marco and Kaplan, Angelika and Kühn, Thomas and Heinrich, Robert and Koziolek, Anne and Reussner, Ralf and Jürjens, Jan and al-Doori, Mahmood and Boltz, Nicolas and Ehl, Marco and Fuchß, Dominik and Großer, Katharina and Hahner, Sebastian and Keim, Jan and Lohr, Matthias and Sağlam, Timur and Schulz, Sophie and Töberg, Jan-Philipp},
+  booktitle = {2022 IEEE 19th International Conference on Software Architecture (ICSA)},
+  publisher = {IEEE},
+  pages     = {157--168},
+  year      = {2022},
+  doi       = {10.1109/ICSA53651.2022.00023},
+  google_scholar_id = {Tyk-4Ss8FVUC},
+}
+
+@inproceedings{konersmann_evaluation_methods_replication_2022,
+  abbr      = {ICSA-C},
+  title     = {Replication Package of "{Evaluation Methods and Replicability of Software Architecture Research Objects}"},
+  author    = {Konersmann, Marco and Kaplan, Angelika and Kühn, Thomas and Heinrich, Robert and Koziolek, Anne and Reussner, Ralf and Jürjens, Jan and al-Doori, Mahmood and Boltz, Nicolas and Ehl, Marco and Fuchß, Dominik and Großer, Katharina and Hahner, Sebastian and Keim, Jan and Lohr, Matthias and Sağlam, Timur and Schulz, Sophie and Töberg, Jan-Philipp},
+  booktitle = {2022 IEEE 19th International Conference on Software Architecture Companion (ICSA-C)},
+  publisher = {IEEE},
+  pages     = {58},
+  year      = {2022},
+  doi       = {10.1109/ICSA-C54293.2022.00021},
+  google_scholar_id = {YsMSGLbcyi4C},
+}
+
+@inproceedings{kaplan_taxonomies_2022,
+  abbr      = {EASE},
+  title     = {Introducing an Evaluation Method for Taxonomies},
+  author    = {Kaplan, Angelika and Kühn, Thomas and Hahner, Sebastian and Benkler, Niko and Keim, Jan and Fuchß, Dominik and Corallo, Sophie and Heinrich, Robert},
+  booktitle = {The International Conference on Evaluation and Assessment in Software Engineering 2022},
+  series    = {EASE 2022},
+  publisher = {ACM},
+  pages     = {311--316},
+  year      = {2022},
+  doi       = {10.1145/3530019.3535305},
+  google_scholar_id = {ufrVoPGSRksC},
+}
+
+@inproceedings{schulz_continuous_secure_2022,
+  abbr      = {SSP},
+  title     = {Continuous Secure Software Development and Analysis},
+  author    = {Schulz, Sophie and Reiche, Frederik and Hahner, Sebastian and Schiffl, Jonas},
+  booktitle = {Symposium on Software Performance 2021},
+  publisher = {RWTH Aachen},
+  year      = {2022},
+  doi       = {10.5445/IR/1000143320},
+  google_scholar_id = {IjCSPb-OGe4C},
+}
+
+% ── 2021 ─────────────────────────────────────────────────────────────────────
+
+@inproceedings{keim_swattr_2021,
+  abbr      = {ECSA},
+  title     = {Trace Link Recovery for Software Architecture Documentation},
+  author    = {Keim, Jan and Schulz, Sophie and Fuchß, Dominik and Kocher, Claudius and Speit, Janek and Koziolek, Anne},
+  booktitle = {Software Architecture (ECSA 2021)},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer International Publishing},
+  pages     = {101--116},
+  year      = {2021},
+  doi       = {10.1007/978-3-030-86044-8_7},
+  google_scholar_id = {UeHWp8X0CEIC},
+}
+
+% ── 2020 ─────────────────────────────────────────────────────────────────────
+
+@mastersthesis{schulz_masters_thesis_2020,
+  abbr      = {MSc},
+  title     = {Linking Software Architecture Documentation and Models},
+  author    = {Schulz, Sophie},
+  school    = {Karlsruhe Institute of Technology (KIT)},
+  type      = {Master's thesis},
+  year      = {2020},
+  doi       = {10.5445/IR/1000126194},
   google_scholar_id = {2osOgNQ5qMEC},
 }
 
-@book{cicero_de_oratore_1942,
-  abbr         = {LCL},
-  title        = {De Oratore},
-  author       = {Cicero, Marcus Tullius and Sutton, Edward William and Rackham, Harris},
-  publisher    = {Harvard University Press},
-  series       = {Loeb Classical Library},
-  volume       = {348},
-  year         = {1942},
-  location     = {Cambridge, MA},
-  note         = {Composed 55 BC},
-  doi          = {10.5555/lcl.348.1942},
-  keywords     = {rhetoric, education, dialogue},
+% ── 2019 ─────────────────────────────────────────────────────────────────────
+
+@inproceedings{wachtel_chatbots_luis_2019,
+  abbr      = {CDKE},
+  title     = {Approaching Natural Conversation Chatbots by Interactive Dialogue Modelling \& {Microsoft} {LUIS}},
+  author    = {Wachtel, Alexander and Fuchß, Dominik and Schulz, Sophie and Tichy, Walter F.},
+  booktitle = {2019 IEEE International Conference on Conversational Data \& Knowledge Engineering (CDKE)},
+  publisher = {IEEE},
+  pages     = {39--42},
+  year      = {2019},
+  doi       = {10.1109/CDKE46621.2019.00013},
+  google_scholar_id = {u-x6o8ySG0sC},
 }
 
-@book{cicero_tusculanae_1927,
-  abbr         = {LCL},
-  title        = {Tusculanae Disputationes},
-  author       = {Cicero, Marcus Tullius and King, John Edward},
-  publisher    = {Harvard University Press},
-  series       = {Loeb Classical Library},
-  volume       = {141},
-  year         = {1927},
-  location     = {Cambridge, MA},
-  note         = {Composed 45 BC},
-  doi          = {10.5555/lcl.141.1927},
-  keywords     = {ethics, death, consolation},
-}
-
-% The Oxford Classical Texts blue (#002147) is genuinely too dark to read as
-% text on this page. It is in venues.yml unaltered anyway — VenueBadge mixes it
-% toward white for the label and toward the page for the fill, which is the
-% whole reason you can paste a venue's real brand colour in without thinking.
-@book{cicero_de_natura_deorum_1933,
-  abbr         = {OCT},
-  title        = {De Natura Deorum. Academica},
-  author       = {Cicero, Marcus Tullius and Rackham, Harris},
-  publisher    = {Oxford University Press},
-  series       = {Oxford Classical Texts},
-  year         = {1933},
-  location     = {Oxford},
-  note         = {Composed 45 BC},
-  doi          = {10.5555/oct.nd.1933},
-  keywords     = {theology, epistemology, Academic scepticism},
-}
-
-% Six authors, so /publications/ has an author list long enough to truncate.
-% The letters were edited across successive volumes by different hands; listing
-% them together in one entry is a demo convenience, not a real title page.
-@book{cicero_epistulae_1987,
-  abbr         = {OCT},
-  title        = {Epistulae ad Atticum},
-  author       = {Cicero, Marcus Tullius and Shackleton Bailey, David Roy and Watt, William Smith and Purser, Louis Claude and Sj{\"o}gren, Hjalmar and Moricca, Umberto},
-  publisher    = {Oxford University Press},
-  series       = {Oxford Classical Texts},
-  year         = {1987},
-  location     = {Oxford},
-  note         = {Written 68-44 BC},
-  doi          = {10.5555/oct.att.1987},
-  keywords     = {letters, late republic, correspondence},
-}
-
-% The one entry with a living editor, and so the only one whose paper page
-% renders an ORCID link beside an author name.
-@book{cicero_de_amicitia_2021,
-  abbr         = {CUP},
-  title        = {Laelius de Amicitia},
-  author       = {Cicero, Marcus Tullius and Marek, Livia},
-  publisher    = {Cambridge University Press},
-  series       = {Cambridge Texts in the History of Political Thought},
-  year         = {2021},
-  month        = {6},
-  location     = {Cambridge},
-  note         = {Composed 44 BC},
-  doi          = {10.5555/cup.amic.2021},
-  page         = {/papers/de-amicitia/},
-  keywords     = {friendship, ethics, dialogue},
-}
-
-% No `abbr`: a freely available digital text belongs to no edition series, so
-% it gets no venue badge. No DOI either, so the `url` renders a "Link" chip
-% where the others render "DOI".
-@misc{cicero_perseus_catilinam,
-  title        = {In Catilinam I-IV},
-  author       = {Cicero, Marcus Tullius},
-  howpublished = {Perseus Digital Library},
-  year         = {1856},
-  note         = {Delivered 63 BC; text after the edition of C. D. Yonge},
-  url          = {https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0019},
-  keywords     = {oratory, Catilinarian conspiracy},
-}
-
-% NO `abbr` BUT A PAGE: the case that used to be mislabelled. An entry with no
-% venue badge is not a preprint — this one appeared in a journal — and its page
-% must not call it one. With no abbr, the breadcrumb on /papers/de-fato/, the
-% row on /papers/ and a project's related-papers line all show what the entry
-% says it appeared in: the journal title. Want a short label there instead?
-% Give the entry an abbr and venues.yml a row for it — that is what a badge is.
-@article{cicero_de_fato_1942,
-  title        = {De Fato},
-  author       = {Cicero, Marcus Tullius and Rackham, Harris},
-  journal      = {Rheinisches Museum f{\"u}r Philologie},
-  volume       = {91},
-  pages        = {1--29},
-  year         = {1942},
-  note         = {Composed 44 BC},
-  doi          = {10.5555/rhm.091.1942},
-  page         = {/papers/de-fato/},
-  keywords     = {fate, free will, Stoicism},
+@inproceedings{wachtel_dialog_meaning_2019,
+  abbr      = {ICSC},
+  title     = {Dialog-Based Meaning Derivation Service for Technical Language Domains},
+  author    = {Wachtel, Alexander and Schulz, Sophie and Tichy, Walter F.},
+  booktitle = {2019 IEEE 13th International Conference on Semantic Computing (ICSC)},
+  publisher = {IEEE},
+  pages     = {375--380},
+  year      = {2019},
+  doi       = {10.1109/ICOSC.2019.8665513},
+  google_scholar_id = {d1gkVwhDpl0C},
 }

@@ -9,11 +9,13 @@ statLabels:
   publications: 'publications'
   citations: 'citations'
   hIndex: 'h-index'
+  replicationPackages: 'replication packages'
   projects: 'projects'
   people: 'collaborators'
 # Dates the Scholar-derived figures; {date} is the last refresh.
 statNote: '(updated {date})'
 # Under "Get in touch", above the contact rows (src/data/contact.yml).
 intros:
-  contact: 'Questions, corrections and arguments all welcome.'
+  # followed by the address (SITE.email) and a full stop
+  contact: 'If you want to contact me, please write an email to'
 ---

@@ -10,12 +10,12 @@ import { FEATURES, type FeatureId } from './features.ts';
 
 export const SITE = {
   /** No trailing slash. With a `base` configured, include that path. */
-  url: 'https://dfuchss.github.io/astro-studia',
+  url: 'https://hossiphi.github.io',
 
   /** A mark beside the wordmark, or `null`. Dimensions and alt are derived;
       `replacesWordmark` for a logo with the name already in it. The wordmark
       itself is `brand` in src/content/pages/site/site.md. */
-  brandLogo: { src: '/assets/img/brand-mark.svg', replacesWordmark: false } as {
+  brandLogo: null as {
     src: string;
     replacesWordmark?: boolean;
   } | null,
@@ -24,19 +24,19 @@ export const SITE = {
   lang: 'en',
 
   /** Formats every date and number; toLocaleString()'s default drifts between machines. */
-  locale: 'en-US',
+  locale: 'en-GB',
 
-  email: 'cicero@example.org',
+  email: 'sophie.corallo@kit.edu',
 
   /** The project hero's GitHub button, and the footer credit's link. */
   repo: 'https://github.com/dfuchss/astro-studia',
 
   /** The 1200x630 link-preview card. null for the small text-only card. */
-  ogImage: '/assets/img/og.png',
+  ogImage: null as string | null,
 
   /** SET THIS TO false once the content is yours: banner on the entry page, word
       in the footer. */
-  demoNotice: true as boolean,
+  demoNotice: false as boolean,
 } as const;
 
 /**
@@ -47,9 +47,9 @@ export const SITE = {
  * published under.
  */
 export const SELF = {
-  first: 'Marcus Tullius',
-  last: 'Cicero',
-  surnames: ['Cicero'],
+  first: 'Sophie',
+  last: 'Corallo',
+  surnames: ['Corallo', 'Schulz'],
 } as const;
 
 /**

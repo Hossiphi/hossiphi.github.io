@@ -1,224 +1,158 @@
-# The CV. /cv/ renders this file and nothing else. DEMO CONTENT.
+# The CV. /cv/ renders this file and nothing else. Field reference: src/lib/cv.ts
+# (or the comment block at the top of upstream's cv.yml). Structure follows
+# fuchss.org/cv: Experience, Education, Teaching, Projects, Awards, Certificates.
 #
-# A section is a title, a heading and a list of entries, so adding "Service" or
-# "Grants" is a new block here and no code. Page order is file order.
+# The current position uses `end: present` rather than `current: true`: the
+# latter would also add a "where" row to the contact block, which should show
+# the email only.
 #
-# Section fields:
-#   layout  timeline | rows | cards | courses. Default: `timeline` (a date rail)
-#           if any entry carries a date, else `rows`. `cards` is a grid of name,
-#           "since" date and highlight chips (Projects); `courses` groups by
-#           each entry's `semester`, earlier terms behind a disclosure.
-#   count   a noun beside the heading — "Rhetorical instruction 24 courses".
-#           Opt-in; "course|courses" for a section that may hold one.
-#
-# Entry fields, all optional but `title`:
-#   title     what it was (required)
-#   org       who it was with
-#   url       link on the org, or on the title for `cards`
-#   start     "2020-03", "2020", or anything else: a value that looks like a
-#   end       date is formatted, anything else printed verbatim. A start with no
-#             end is a single date, not an open range.
-#   current   true renders "– present" and a `now` badge, and the contact
-#             block's "where" row reads the first entry that says so. Explicit,
-#             because a degree or a prize also has a start and no end.
-#   location  city, country
-#   note      one short line, e.g. a thesis title (or a `cards` summary)
-#   details   bullets; plain text unless one embeds a markdown link,
-#             "Reviewer for [ACM TOSEM](https://…)", which renders as one.
-#   minor     true sends the entry to a collapsed "N more" disclosure at the end
-#             of the section, for a long run of repeated low-value entries.
-#   highlights  chips under a `cards` entry.
-#   semester    a `courses` entry's term, e.g. "WS 26/27" or "SS 2026".
-#   type        a `courses` entry's kind, e.g. "Lecture / Practice".
+# TODO(Sophie): add your Bachelor's degree and anything else missing.
 
 summary: >-
-  Advocate, magistrate and translator. Brought Greek philosophy into Latin, and
-  in the process supplied much of the technical vocabulary European philosophy
-  still runs on.
+  A researcher at the Karlsruhe Institute of Technology since 2020. In my
+  research, I make security knowledge explicit throughout the software life
+  cycle: security requirements, the assumptions a system's security rests on,
+  and the trace links that connect them to architecture and code. Currently, I
+  apply this to energy systems within the KASTEL Security Research Labs.
 
 interests:
-  - Rhetoric
-  - Stoic & Academic philosophy
-  - Roman constitutional law
-  - Latin philosophical vocabulary
+  - Secure software engineering
+  - Traceability
+  - Requirements engineering
+  - Assumption management
 
 sections:
   - id: experience
     heading: Experience
     entries:
-      - title: Writing and private study
-        org: Tusculum
-        start: '46 BC'
-        current: true
-        details:
-          - Composed the philosophical works in under two years.
-          - Corresponded with Atticus at a rate that has no modern equivalent.
-
-      - title: Proconsul
-        org: Province of Cilicia
-        start: '51 BC'
-        end: '50 BC'
-        location: Cilicia
-        details:
-          - Administered the province and, reluctantly, commanded in the field.
-
-      - title: Consul
-        org: Roman Republic
-        start: '63 BC'
-        end: '62 BC'
-        location: Rome
-        note: Suppression of the Catilinarian conspiracy
-        details:
-          - Delivered the four Catilinarian orations.
-          - Executed five conspirators without trial — the decision that led to exile five years later.
-
-      - title: Praetor
-        org: Roman Republic
-        start: '66 BC'
-        end: '66 BC'
-        location: Rome
-
-      - title: Quaestor
-        org: Roman Republic
-        start: '75 BC'
-        end: '75 BC'
-        location: Lilybaeum, Sicily
-
-      # The `minor` case: five recurring courtroom appearances, kept on the page
-      # but not beside a consulship.
-      - title: Advocate
-        org: Roman law courts
-        start: '80 BC'
-        end: '80 BC'
-        minor: true
-        note: 'Pro Roscio Amerino — defended Sextus Roscius against a charge of parricide.'
-
-      - title: Advocate
-        org: Roman law courts
-        start: '70 BC'
-        end: '70 BC'
-        minor: true
-        note: 'In Verrem — prosecuted the former governor of Sicily for corruption.'
-
-      - title: Advocate
-        org: Roman law courts
-        start: '66 BC'
-        end: '66 BC'
-        minor: true
-        note: 'Pro Cluentio — defended Aulus Cluentius against a charge of poisoning.'
-
-      - title: Advocate
-        org: Roman law courts
-        start: '62 BC'
-        end: '62 BC'
-        minor: true
-        note: 'Pro Sulla — defended Publius Sulla against a charge of conspiracy.'
-
-      - title: Advocate
-        org: Roman law courts
-        start: '56 BC'
-        end: '56 BC'
-        minor: true
-        note: 'Pro Caelio — defended Marcus Caelius Rufus.'
+      - title: Researcher
+        org: Karlsruhe Institute of Technology
+        url: https://mcse.kastel.kit.edu/staff_sophie_corallo.php
+        start: '2020-11'
+        end: present
+        note: Research & Teaching
 
   - id: education
     heading: Education
     entries:
-      - title: Rhetoric and philosophy
-        org: Rhodes and Athens
-        start: '79 BC'
-        end: '77 BC'
-        note: Studied under Molon of Rhodes and Antiochus of Ascalon.
-
-      - title: Law
-        org: Rome
-        start: '90 BC'
-        note: Under Quintus Mucius Scaevola.
+      - title: M.Sc. in Informatics
+        org: Karlsruhe Institute of Technology
+        url: https://www.kit.edu/
+        location: Karlsruhe, Germany
+        end: '2020'
+        note: 'Thesis: Linking Software Architecture Documentation and Models'
 
   - id: teaching
-    heading: Rhetorical instruction
+    heading: Teaching
     layout: courses
-    # The one section that names a `count`: a teaching record is partly a claim
-    # about volume, so "6 courses" earns its place beside the heading.
     count: course|courses
+    # Mirrors the Teaching tab on the KIT staff page (links to its course pages).
     entries:
-      - title: Rhetorica ad discipulos
-        type: Declamation practice
-        semester: 'WS 46/45'
-        url: https://en.wikipedia.org/wiki/Rhetorica_ad_Herennium
-
-      - title: Advocacy practicum
-        type: Practicum
-        semester: 'WS 46/45'
-
-      - title: De Officiis seminar
+      - title: 'Seminar: Software Architecture, Security and Privacy'
         type: Seminar
-        semester: 'SS 46'
-
-      - title: Forensic composition
-        type: Practicum
-        semester: 'WS 45/44'
-
-      - title: De Oratore readings
+        semester: 'WS 26/27'
+        url: https://mcse.kastel.kit.edu/staff_1205.php
+      - title: Software Engineering II
+        type: Lecture
+        semester: 'SS 2026'
+        url: https://mcse.kastel.kit.edu/staff_1207.php
+      - title: Proseminar Dependability of Software-intensive Technical Systems
+        type: Proseminar
+        semester: 'SS 2026'
+        url: https://mcse.kastel.kit.edu/staff_1203.php
+      - title: Software Engineering II
+        type: Lecture
+        semester: 'SS 2025'
+        url: https://mcse.kastel.kit.edu/staff_1208.php
+      - title: Software Engineering II
+        type: Lecture
+        semester: 'WS 24/25'
+        url: https://mcse.kastel.kit.edu/staff_1211.php
+      - title: Practical Course Developing Software as an Engineer
+        type: Practical course
+        semester: 'SS 2024'
+        url: https://mcse.kastel.kit.edu/staff_1201.php
+      - title: Software Engineering II
+        type: Lecture
+        semester: 'WS 23/24'
+        url: https://mcse.kastel.kit.edu/staff_1209.php
+      - title: Continuous Software Engineering
         type: Seminar
-        semester: 'SS 45'
-
-      - title: Rhetorica ad discipulos
-        type: Declamation practice
-        semester: 'WS 44/43'
+        semester: 'WS 23/24'
+        url: https://mcse.kastel.kit.edu/staff_1195.php
+      - title: 'Practical Course: Tools for Agile Modelling'
+        type: Practical course
+        semester: 'WS 23/24'
+        url: https://mcse.kastel.kit.edu/staff_1197.php
+      - title: Proseminar Software Requirements and Design
+        type: Proseminar
+        semester: 'SS 2023'
+        url: https://mcse.kastel.kit.edu/staff_1199.php
+      - title: 'Practical Course: Tools for Agile Modelling'
+        type: Practical course
+        semester: 'SS 2023'
+        url: https://mcse.kastel.kit.edu/staff_1196.php
+      - title: Software Engineering II
+        type: Lecture
+        semester: 'WS 22/23'
+        url: https://mcse.kastel.kit.edu/staff_697.php
+      - title: Data in Software-Intensive Technical Systems - Modeling - Analysis - Protection
+        type: Seminar
+        semester: 'WS 22/23'
+        url: https://mcse.kastel.kit.edu/staff_710.php
+      - title: 'Practical Course: Tools for Agile Modelling'
+        type: Practical course
+        semester: 'WS 22/23'
+        url: https://mcse.kastel.kit.edu/staff_709.php
+      - title: Undergraduate Seminar Software Disasters
+        type: Proseminar
+        semester: 'SS 2022'
+        url: https://mcse.kastel.kit.edu/staff_707.php
+      - title: Proseminar Software Requirements and Design
+        type: Proseminar
+        semester: 'SS 2021'
+        url: https://mcse.kastel.kit.edu/staff_705.php
 
   - id: projects
     heading: Projects
     layout: cards
     entries:
-      - title: De Re Publica
-        note: A dialogue reconstructing the ideal constitution of Rome, modelled on Plato and adapted to Roman practice.
-        start: '54 BC'
-        highlights:
-          - Political theory
-          - Dialogue form
-        url: https://en.wikipedia.org/wiki/De_re_publica_(Cicero)
-
-      - title: Academy at Tusculum
-        note: A private library and philosophical circle, built to translate Greek schools of thought into a Latin vocabulary that did not yet exist.
-        start: '55 BC'
-        highlights:
-          - Translation
-          - Stoicism
-          - Academic Skepticism
-
-      - title: Corpus of forensic speeches
-        note: Assembling and revising the courtroom speeches for publication, so the arguments would outlast the cases.
-        start: '80 BC'
-        highlights:
-          - Rhetoric
-          - Publication
+      - title: KASTEL Security Research Labs
+        url: https://kastel-labs.de/
+        note: >-
+          Topic Energy System Security: secure software engineering for energy
+          systems, e.g. the open-source EV charging stack EVerest.
+        highlights: [Secure software engineering, Assumption management]
+      - title: ARDoCo
+        url: https://ardoco.de/
+        note: >-
+          Automating Requirements and Documentation Comprehension: trace links
+          and consistency between documentation, models and code.
+        highlights: [Traceability, Requirements engineering]
+      - title: µDevOps
+        note: >-
+          EU Horizon 2020 RISE project on software quality assurance for
+          microservice DevOps.
+        highlights: [DevOps]
 
   - id: awards
-    heading: Honours
+    heading: Awards & recognition
+    # Mirrors "Qualifications and Awards" on the KIT staff page.
     entries:
-      - title: Pater Patriae
-        org: Roman Senate
-        start: '63 BC'
-        note: Voted after the conspiracy.
+      - title: 'Best mandatory exercise: Software Engineering II'
+        org: KIT Department of Informatics
+        start: '2025'
+      - title: 'Best mandatory lecture: Software Engineering II'
+        org: KIT Department of Informatics
+        start: '2025'
+      - title: Microsoft Imagine Cup — 3rd place, German national final
+        org: Microsoft
+        start: '2016'
 
-  - id: community
-    heading: Public life
+  - id: certificates
+    heading: Certificates
     entries:
-      - title: Augur
-        org: College of Augurs
-        start: '53 BC'
-        note: Elected to one of the four great priestly colleges.
-
-      - title: Correspondent
-        details:
-          - 'Extensive correspondence with [Atticus](https://en.wikipedia.org/wiki/Titus_Pomponius_Atticus), later published as the Epistulae ad Atticum.'
-          - 'Exchanged letters with [Julius Caesar](https://en.wikipedia.org/wiki/Julius_Caesar) even after backing the opposing side in the civil war.'
-
-  - id: languages
-    heading: Languages
-    entries:
-      - title: Latin
-        note: Native
-      - title: Greek
-        note: Fluent — read, wrote and argued in it
+      - title: Professional Scrum Product Owner I
+        org: Scrum.org
+      - title: Professional Scrum Master I
+        org: Scrum.org

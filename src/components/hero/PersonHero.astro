@@ -9,6 +9,7 @@ import { PROJECTS, PUBLICATIONS } from '../../lib/paths.ts';
 import ScholarMark from '../ScholarMark.astro';
 import { formatUpdatedShort, scholarMetrics } from '../../lib/citations.ts';
 import { formatCount } from '../../lib/format.ts';
+import { repositories } from '../../lib/data.ts';
 import { fill, getPage, need } from '../../lib/pages.ts';
 import SocialRow from '../SocialRow.astro';
 
@@ -64,6 +65,13 @@ const rows: Stat[] = [
         },
       ]
     : []),
+  /* Site addition (not in astro-studia): the Zenodo DOIs in repositories.yml,
+     counted as fuchss.org does. */
+  {
+    value: (repositories.zenodo_repos ?? []).length,
+    label: statLabel('replicationPackages'),
+    href: PUBLICATIONS,
+  },
   { value: projects.length, label: statLabel('projects'), href: PROJECTS },
 ];
 const stats = rows.filter((stat) => stat.value > 0);

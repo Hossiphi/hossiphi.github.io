@@ -8,21 +8,21 @@
   color-scheme: dark;
 
   /* ── SURFACES ──────────────────────────────────────────────────────────
-     Untinted on purpose: a surface that leans into one accent looks muddy
-     under the next. */
-  --bg: #0b0d12;
-  --bg-1: #111520;
-  --bg-2: #161c27;
-  --bg-3: #1d2431;
+     Site palette: a green-leaning near-black instead of the template's
+     blue-black. */
+  --bg: #0a0f0c;
+  --bg-1: #101712;
+  --bg-2: #151e18;
+  --bg-3: #1c271f;
   --border: rgb(255 255 255 / 9%);
   --border-strong: rgb(255 255 255 / 16%);
 
   /* ── INK ───────────────────────────────────────────────────────────────
      Three weights, no more: a fourth usually means something wants
      --text-muted at a larger size. */
-  --text: #edeff4;
-  --text-muted: #a4adbd;
-  --text-faint: #828d9f;
+  --text: #eef2ee;
+  --text-muted: #a9b5ac;
+  --text-faint: #88958b;
 
   /* ── PALETTE ───────────────────────────────────────────────────────────
      One base hex per accent family, mixed into the -strong, -line, -dim and
@@ -31,6 +31,8 @@
      src/features.ts says: an accent nothing renders costs a few bytes, and the
      audit compares what the HTML uses against what the CSS defines. */
 
+  /* Site palette: the `cyan` slot (default accent, projects, the left
+     background glow) holds the sky blue janke.im uses. */
   --cyan: #5cc8e8;
   --cyan-strong: color-mix(in srgb, var(--cyan) 55%, white);
   --cyan-line: color-mix(in srgb, var(--cyan) 42%, transparent);
@@ -45,7 +47,9 @@
 
   /* Not fenced with the paper pages: base.css reads --violet-glow for the
      second background gradient on every page. */
-  --violet: #ad8cf2;
+  /* Site palette: the `violet` slot (paper pages, the right background glow)
+     holds a warm pink. */
+  --violet: #f47c9e;
   --violet-strong: color-mix(in srgb, var(--violet) 55%, white);
   --violet-line: color-mix(in srgb, var(--violet) 42%, transparent);
   --violet-dim: color-mix(in srgb, var(--violet) 13%, transparent);
@@ -169,4 +173,51 @@
   --sec-line: var(--amber-line);
   --sec-dim: var(--amber-dim);
   --sec-glow: var(--amber-glow);
+}
+
+/* ── SITE ADDITION (not in astro-studia) ─────────────────────────────────
+   The same two background glows on every page: sky blue top left (the `cyan`
+   slot), pink top right (`--violet-glow`, already constant in base.css).
+   Scoped to <body>, which carries the page's data-section, so only the
+   body::before wash is pinned; links and chips keep their section accent. */
+body[data-section] {
+  --sec-glow: var(--cyan-glow);
+}
+
+/* Text accents follow the theme instead of the template's green and amber:
+   publications sky blue (`cyan` slot); cv, contact and the paper pages a
+   pink-tinged orange (`coral`, text only — the background glow stays pink).
+   Home stays ink. Later in the file than the template's blocks, so these win
+   at equal specificity. */
+:root {
+  --coral: #ff9c5c;
+  --coral-strong: color-mix(in srgb, var(--coral) 55%, white);
+  --coral-line: color-mix(in srgb, var(--coral) 42%, transparent);
+  --coral-dim: color-mix(in srgb, var(--coral) 13%, transparent);
+  --coral-glow: color-mix(in srgb, var(--coral) 14%, transparent);
+}
+
+[data-section='publications'] {
+  --sec: var(--cyan);
+  --sec-strong: var(--cyan-strong);
+  --sec-line: var(--cyan-line);
+  --sec-dim: var(--cyan-dim);
+  --sec-glow: var(--cyan-glow);
+}
+
+[data-section='papers'],
+[data-section='people'],
+[data-section='cv'],
+[data-section='contact'] {
+  --sec: var(--coral);
+  --sec-strong: var(--coral-strong);
+  --sec-line: var(--coral-line);
+  --sec-dim: var(--coral-dim);
+  --sec-glow: var(--coral-glow);
+}
+
+/* No mono eyebrow labels ("## section", "$ whoami") on any page. `p.kicker`
+   so it outranks base.css's `.kicker`, which loads after this file. */
+p.kicker {
+  display: none;
 }

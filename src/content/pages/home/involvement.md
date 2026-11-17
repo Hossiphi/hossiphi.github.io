@@ -3,6 +3,6 @@
 # trailing phrase renders as fainter follow-up text.
 ---
 
-- Advocate before the [Roman courts](https://www.perseus.tufts.edu/) _from 81 BC, including the defence of Sextus Roscius_
-- Member of the [Senate](https://www.perseus.tufts.edu/) _and, in 63 BC, consul_
-- Correspondent of [Atticus](https://en.wikipedia.org/wiki/Titus_Pomponius_Atticus)
+- [KASTEL Security Research Labs](https://kastel-labs.de/), Topic Energy System Security _— secure software for energy systems_
+- [ARDoCo](https://ardoco.de/) _— Automating Requirements and Documentation Comprehension_
+- [Teaching](/cv/#teaching) at KIT _— Software Engineering II, seminars and practical courses_

@@ -5,7 +5,8 @@ import { FEATURES, HOME_SHAPE } from '../features.ts';
 import Base from '../layouts/Base.astro';
 import DemoNotice from '../components/DemoNotice.astro';
 import DemoSwitch from '../components/DemoSwitch.astro';
-import Contact from '../components/Contact.astro';
+import Email from '../components/Email.astro';
+import { SITE } from '../consts.ts';
 import PersonHero from '../components/hero/PersonHero.astro';
 import ProjectHero from '../components/hero/ProjectHero.astro';
 import PaperEntry from '../components/paper/PaperEntry.astro';
@@ -89,7 +90,7 @@ const involvement = isProfile ? await getPage('home/involvement') : undefined;
 
           {papers.length > 0 && (
             <>
-              <h3 class="sub">Paper pages</h3>
+              <h3 class="sub">Selected publications</h3>
               <p class="blurb">{profile.text('intros', 'papers')}</p>
               <ul class="bare">
                 {papers.map(({ paper, pub }) => (
@@ -234,9 +235,11 @@ const involvement = isProfile ? await getPage('home/involvement') : undefined;
       contact
     </p>
     <h2>Get in touch</h2>
-    <p class="blurb">{home.text('intros', 'contact')}</p>
-
-    <Contact />
+    {/* Site change: the address inline in the sentence, no contact rows and no
+        "full cv" link (src/data/contact.yml still feeds /cv/). */}
+    <p class="blurb">
+      {home.text('intros', 'contact')} <Email address={SITE.email} />.
+    </p>
   </section>
 </Base>
 

@@ -1,20 +1,41 @@
-# What /repositories/ lists. DEMO VALUES — the shipped ones exist, so that
-# `npm run data:github` works on a fresh clone.
-#
-# Nothing is fetched at build time: `npm run data:github` reads this file, calls
-# the GitHub API and writes the committed src/data/github-metadata.json, so the
-# build stays hermetic, offline and token-free. Add a repo, run it, commit both
-# files; .github/workflows/update-github-metadata.yml does it on a schedule.
+# Code and archived datasets. The `repositories` feature (the /repositories/
+# page) is off; the hero counts `zenodo_repos` as "replication packages"
+# (src/components/hero/PersonHero.astro). Source: Zenodo records listing
+# ORCID 0000-0002-1531-2977 as creator (replication packages and datasets only,
+# not software releases or demo videos). Concept DOIs where available.
 
 github_users:
-  - octocat
+  - Hossiphi
 
-github_repos:
-  - withastro/astro
-  - octocat/Hello-World
+github_repos: []
 
-# Archived datasets and software releases, listed by DOI. No API call and no
-# metadata file — a DOI does not go stale.
+# Archived datasets and replication packages, listed by DOI, newest first.
 zenodo_repos:
-  - name: Replication package (example)
-    doi: 10.5281/zenodo.10000000
+  - name: The ARDoCo Tool Landscape — replication package (ASE 2026)
+    doi: 10.5281/zenodo.21533985
+  - name: The EVerest Dataset for Secure Software Engineering (ASE 2026)
+    doi: 10.5281/zenodo.21157836
+  - name: AutoPCM — replication package (ECSA 2026)
+    doi: 10.5281/zenodo.20287035
+  - name: GARMA — replication package (ICSA-C 2026)
+    doi: 10.5281/zenodo.19192291
+  - name: Who's Who? — replication package (TAAS 2026)
+    doi: 10.5281/zenodo.18957376
+  - name: ArchGuard — replication package (ICSA 2026)
+    doi: 10.5281/zenodo.18891082
+  - name: Software Architecture Meets LLMs — supplementary material
+    doi: 10.5281/zenodo.15475475
+  - name: Requirements Classification for Traceability Link Recovery — supplementary material (RE 2024)
+    doi: 10.5281/zenodo.10990762
+  - name: Recovering Trace Links Between Software Documentation and Code — replication package (ICSE 2024)
+    doi: 10.5281/zenodo.10411853
+  - name: Inconsistency detection — replication package (ICSA 2023)
+    doi: 10.5281/zenodo.7555194
+  - name: ArDoCo benchmark (ECSA 2022 workshops)
+    doi: 10.5281/zenodo.6966831
+  - name: Evaluation Methods and Replicability — dataset (ICSA 2022)
+    doi: 10.5281/zenodo.6044059
+  - name: SWATTR — reproduction package (ECSA 2021)
+    doi: 10.5281/zenodo.4730621
+  - name: A Systematic Literature Review on the Evaluation of Software Architecture Research — dataset (2021)
+    doi: 10.5281/zenodo.4774795

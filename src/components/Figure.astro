@@ -50,7 +50,7 @@ const maxWidth = isVector ? 'var(--measure)' : `${src.width}px`;
 
 <style>
   .figure {
-    max-width: min(100%, var(--fig-max));
+    max-width: min(100%, var(--fig-max, 100%));
     margin: 0 auto 1.75rem;
   }
   .figure img {

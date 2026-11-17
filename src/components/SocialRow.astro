@@ -4,7 +4,8 @@ import { socials } from '../lib/data.ts';
 /**
  * Profile links, icon-only: the platform name is in `aria-label` and `title`.
  * The marks are Simple Icons paths (CC0, https://simpleicons.org), plus Material
- * Icons' `work` briefcase (Apache-2.0, https://fonts.google.com/icons). A profile
+ * Icons' `work` briefcase (Apache-2.0, https://fonts.google.com/icons), and the
+ * KIT logo from Wikimedia Commons (File:Logo KIT.svg), as on janke.im. A profile
  * not listed here goes under `extra:` in socials.yml and renders as a text chip.
  */
 const ICONS = {
@@ -30,9 +31,17 @@ const ICONS = {
     'm23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z',
   bluesky:
     'M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026',
+  kit: 'm984.5105,25.415961-230.51422,0,0,78.511439,67.39781,0,0,270.66615,95.71893,0,0-270.66615,67.39748,0,0-78.511439zm-253.45829,348.81894h-95.71919v-348.81894h95.71919v348.81894zm-111.85159,0-106.47385,0-126.54981-135.87062,0-77.79425,122.60625-135.51274,109.70066,0-141.24836,175.66465,141.96511,173.51296z M90.415838,153.04142c-18.283583,22.22712-34.057265,46.60505-46.246544,72.77533l319.06361,148.41815-272.81706-221.19348z M363.2329,374.2349,214.45625,57.681003c-26.52903,12.188587-50.90675,27.24608-73.13364,45.170947l221.91029,271.38295z M363.2329,374.2349l0.35846-348.81894h-2.86773c-28.32151,0-55.9259,3.585389-82.45464,10.038217l84.96391,338.78072z M21.225547,288.91246c-7.169814,27.24608-10.754847,55.92567-11.113434,85.32244h353.12079l-342.00735-85.32244z',
 } as const;
 
 type Icon = keyof typeof ICONS;
+
+/* Site addition (from janke.im): marks wider than the 24-unit square keep
+   their own viewBox and get a wide chip. The kit path is janke.im's with one
+   fix: the vertical ray (the K's stem) starts with an absolute `M` — a
+   relative `m` after `z` drew it off-canvas — and the viewBox covers the
+   whole fan. */
+const WIDE: Partial<Record<Icon, string>> = { kit: '5 20 985 360' };
 
 /** A chip: an icon when we have a mark for it, otherwise the label as text. */
 type Link = { label: string; href: string; icon?: Icon };
@@ -111,14 +120,20 @@ const links: Link[] = profiles.flatMap((profile) =>
     {links.map((link) => (
       <li>
         <a
-          class:list={['chip', link.icon && 'social']}
+          class:list={['chip', link.icon && 'social', link.icon && link.icon in WIDE && 'wide']}
           href={link.href}
           rel="me noopener"
           aria-label={link.icon ? link.label : undefined}
           title={link.label}
         >
           {link.icon ? (
-            <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" focusable="false">
+            <svg
+              viewBox={WIDE[link.icon] ?? '0 0 24 24'}
+              width={WIDE[link.icon] ? 46 : 17}
+              height="17"
+              aria-hidden="true"
+              focusable="false"
+            >
               <path d={ICONS[link.icon]} />
             </svg>
           ) : (
@@ -149,6 +164,10 @@ const links: Link[] = profiles.flatMap((profile) =>
     padding: 0;
     display: grid;
     place-items: center;
+  }
+  .social.wide {
+    width: auto;
+    padding: 0 0.7rem;
   }
   .social svg {
     fill: currentColor;
