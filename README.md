@@ -32,6 +32,7 @@ npm ci && npm run check && npm run docs:check && npm run build && npm run audit
 | CV, teaching, projects     | `src/data/cv.yml`                                                                                                                                                                                      |
 | Contact / profile links    | `src/data/contact.yml`, `src/data/socials.yml`                                                                                                                                                         |
 | Every text on the site     | `src/content/pages/**.md`                                                                                                                                                                              |
+| Header logo                | `public/assets/img/brand-mark.png` (96 px copy of `src/assets/brand/icon.png`; `SITE.brandLogo` in `src/consts.ts`)                                                                                    |
 | Photo                      | `src/assets/portrait.jpg`                                                                                                                                                                              |
 | Icons (favicon)            | `src/assets/brand/icon.png` (= `variants/orange-bright.png`) → `npm run icons -- src/assets/brand/icon.png`; other colours in `variants/`, sources in `sources/`, cleanup: `scripts/clean-favicon.mjs` |
 
