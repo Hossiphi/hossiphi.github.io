@@ -221,3 +221,12 @@ body[data-section] {
 p.kicker {
   display: none;
 }
+
+/* Counts in ink (white), like the figures on the home page: the citation,
+   h-index and i10 figures on /publications/ and each entry's citation count
+   (the Scholar mark beside it keeps its blue). The extra classes outrank the
+   components' scoped rules. */
+body .metrics .metric-value,
+body .title-icon.cites .count.mono {
+  color: var(--text);
+}
