@@ -29,6 +29,7 @@
     "data:citations": "node scripts/update-scholar-citations.mjs",
     "bib:check": "node scripts/update-bib.mjs",
     "bib:missing": "node scripts/find-missing-papers.mjs",
+    "bib:missing:kitopen": "node scripts/find-missing-papers-kitopen.mjs",
     "docs": "node scripts/gen-docs.mjs",
     "docs:check": "node scripts/gen-docs.mjs --check"
   },

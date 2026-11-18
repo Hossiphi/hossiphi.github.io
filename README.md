@@ -36,6 +36,10 @@ npm ci && npm run check && npm run docs:check && npm run build && npm run audit
 | Photo                      | `src/assets/portrait.jpg`                                                                                                                                                                              |
 | Icons (favicon)            | `src/assets/brand/icon.png` (= `variants/orange-bright.png`) → `npm run icons -- src/assets/brand/icon.png`; other colours in `variants/`, sources in `sources/`, cleanup: `scripts/clean-favicon.mjs` |
 
+New papers on KITopen (found via the ORCID in `socials.yml`) that `papers.bib`
+lacks: `npm run bib:missing:kitopen` (dry run), `-- -i` to add them one by one,
+`-- --yes` to add all. The script is copied from fuchss.org.
+
 A new publication gets a citation chip once its `google_scholar_id` (the part
 after the colon in `citations.yml`) is set in `papers.bib`.
 `npm run data:citations` skips the fetch when `last_updated` is today.
@@ -80,6 +84,8 @@ Local changes to template code:
   janke.im; used for the staff-page link in `socials.yml`.
 - `src/styles/tokens.css`: own palette values; at the end, the same background
   glows on every page, text accents per section, and no eyebrow labels.
+- `scripts/lib/missing-papers.mjs`: `entryType`, `extraFields` and
+  `sourcePriority` options (as on fuchss.org) for `find-missing-papers-kitopen.mjs`.
 - `src/pages/index.astro`: "Selected publications" instead of "Paper pages";
   the contact section states the email in its sentence (no rows, no cv link).
 
