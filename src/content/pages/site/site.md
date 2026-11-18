@@ -11,5 +11,5 @@ brand: 'Sophie Corallo'
 brandPrompt: '~/'
 # The meta description of a page that sets none (the entry page), and the
 # feed's description.
-description: 'Sophie Corallo, researcher in software engineering at the Karlsruhe Institute of Technology (KIT): security in the software life cycle, traceability, and energy systems.'
+description: 'Personal website of Sophie Corallo, computer scientist and researcher in secure software engineering, traceability and requirements engineering.'
 ---

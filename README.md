@@ -21,19 +21,19 @@ npm ci && npm run check && npm run docs:check && npm run build && npm run audit
 
 ## Where the content lives
 
-| What                       | File                                                             |
-| -------------------------- | ---------------------------------------------------------------- |
-| Name, URL, email           | `src/consts.ts`                                                  |
-| Sections on/off            | `src/features.ts`                                                |
-| Publications               | `src/data/papers.bib` (+ badges in `src/data/venues.yml`)        |
-| Featured papers (home)     | `src/content/papers/*.md` (`featured: true`), `authors.yml`      |
-| Citation counts            | `src/data/citations.yml` — refresh with `npm run data:citations` |
-| Replication packages count | `zenodo_repos` in `src/data/repositories.yml`                    |
-| CV, teaching, projects     | `src/data/cv.yml`                                                |
-| Contact / profile links    | `src/data/contact.yml`, `src/data/socials.yml`                   |
-| Every text on the site     | `src/content/pages/**.md`                                        |
-| Photo                      | `src/assets/portrait.jpg`                                        |
-| Icons                      | `npm run icons -- path/to/square-image`                          |
+| What                       | File                                                                                                                                                                                                   |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Name, URL, email           | `src/consts.ts`                                                                                                                                                                                        |
+| Sections on/off            | `src/features.ts`                                                                                                                                                                                      |
+| Publications               | `src/data/papers.bib` (+ badges in `src/data/venues.yml`)                                                                                                                                              |
+| Featured papers (home)     | `src/content/papers/*.md` (`featured: true`), `authors.yml`                                                                                                                                            |
+| Citation counts            | `src/data/citations.yml` — refresh with `npm run data:citations`                                                                                                                                       |
+| Replication packages count | `zenodo_repos` in `src/data/repositories.yml`                                                                                                                                                          |
+| CV, teaching, projects     | `src/data/cv.yml`                                                                                                                                                                                      |
+| Contact / profile links    | `src/data/contact.yml`, `src/data/socials.yml`                                                                                                                                                         |
+| Every text on the site     | `src/content/pages/**.md`                                                                                                                                                                              |
+| Photo                      | `src/assets/portrait.jpg`                                                                                                                                                                              |
+| Icons (favicon)            | `src/assets/brand/icon.png` (= `variants/orange-bright.png`) → `npm run icons -- src/assets/brand/icon.png`; other colours in `variants/`, sources in `sources/`, cleanup: `scripts/clean-favicon.mjs` |
 
 A new publication gets a citation chip once its `google_scholar_id` (the part
 after the colon in `citations.yml`) is set in `papers.bib`.

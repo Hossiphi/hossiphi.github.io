@@ -88,7 +88,7 @@ export const shown = <T extends { feature?: FeatureId }>(rows: T[]): T[] =>
  * cannot express goes through Base.astro's `footer` slot.
  */
 export const FOOTER = {
-  email: true,
+  email: false,
   credit: true,
 };
 

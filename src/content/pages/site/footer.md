@@ -5,10 +5,8 @@
 # `footer` slot.
 copyright: '{name}'
 # Text and links, joined with no added spaces. [] drops the part.
-affiliation:
-  - { label: 'KASTEL', href: 'https://kastel.kit.edu/' }
-  - ' · '
-  - { label: 'Karlsruhe Institute of Technology', href: 'https://www.kit.edu/' }
+# Empty: a personal site, no institutional affiliation in the footer.
+affiliation: []
 # The thin link row. `feature` hides a row while that feature is off.
 links:
   - { label: 'Feed', href: '/feed.xml', feature: 'feed' }
