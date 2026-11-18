@@ -230,3 +230,11 @@ body .metrics .metric-value,
 body .title-icon.cites .count.mono {
   color: var(--text);
 }
+
+/* …and their hover in white too: the label and the rule above a figure. */
+body .metrics a.metric.metric:hover .metric-label.mono {
+  color: var(--text);
+}
+body .metrics .metric:hover {
+  border-top-color: color-mix(in srgb, var(--text) 55%, transparent);
+}
