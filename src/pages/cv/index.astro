@@ -170,10 +170,8 @@ const more = (count: number) => fill(label('more'), { count });
                     <span class="when mono">{dateRange(entry, present)}</span>
                     <div class="what">
                       <h3>
-                        {entry.url && !entry.org ? (
-                          <a href={entry.url} rel="noopener">
-                            {entry.title}
-                          </a>
+                        {entry.semester ? (
+                          <span class="course-title">{entry.title}</span>
                         ) : (
                           entry.title
                         )}
@@ -223,10 +221,8 @@ const more = (count: number) => fill(label('more'), { count });
                         <span class="when mono">{dateRange(entry, present)}</span>
                         <div class="what">
                           <h3>
-                            {entry.url && !entry.org ? (
-                              <a href={entry.url} rel="noopener">
-                                {entry.title}
-                              </a>
+                            {entry.semester ? (
+                              <span class="course-title">{entry.title}</span>
                             ) : (
                               entry.title
                             )}
@@ -407,7 +403,11 @@ const more = (count: number) => fill(label('more'), { count });
     font-size: var(--fs-mono);
     font-weight: 400;
   }
-  /* A row's terms after its title, in the date rail's face. */
+  /* A course row: the title in the accent colour (no link: the KIT course
+     pages go stale), its terms after it in the date rail's face. */
+  .what .course-title {
+    color: var(--sec);
+  }
   .what .terms {
     color: var(--text-faint);
     font-weight: 400;

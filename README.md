@@ -88,9 +88,10 @@ Local changes to template code:
   `sourcePriority` options (as on fuchss.org) for `find-missing-papers-kitopen.mjs`.
 - `src/pages/index.astro`: "Selected publications" instead of "Paper pages";
   the contact section states the email in its sentence (no rows, no cv link).
-- `src/pages/cv/index.astro`: `timeline`/`rows` entries show `semester` in
-  brackets after the title in the mono date face (`.terms`), and link the title
-  to `url` when there is no `org`; used by the summarised Teaching section.
+- `src/pages/cv/index.astro`: `timeline`/`rows` entries with a `semester` show
+  the title in the accent colour without a link (`.course-title`) and the terms in
+  brackets in the mono date face (`.terms`); used by the summarised Teaching
+  section.
 
 ## Open TODOs
 
