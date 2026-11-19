@@ -1,7 +1,7 @@
 # The CV. /cv/ renders this file and nothing else. Field reference: src/lib/cv.ts
 # (or the comment block at the top of upstream's cv.yml). Structure follows
-# fuchss.org/cv: Experience, Education, Teaching, Projects, Awards,
-# Certificates, Languages. Source of the facts: wiki page "Sophie Corallo CV"
+# fuchss.org/cv, in this order: Experience, Awards, Education,
+# Projects, Teaching, Certificates, Languages. Source of the facts: wiki page "Sophie Corallo CV"
 # (birth date, address and the child's details stay off the website).
 #
 # The current position uses `end: present` rather than `current: true`: the
@@ -42,23 +42,38 @@ sections:
           - Teaching assistant for Software Engineering II; supervision of 10+ practical courses and (pro-)seminars and 15+ bachelor's and master's theses
       - title: Working Student
         org: ESCde GmbH
+        url: https://www.escde.net/
         start: '2019-04'
         end: '2019-08'
         note: Development Specialist for complex AI solutions
-        minor: true
       - title: Tutor
         org: Karlsruhe Institute of Technology
         start: '2017-10'
         end: '2018-03'
         note: Theoretical Foundations of Informatics
-        minor: true
       # Two stints at one company: one entry, the date as free text (passes
       # through formatDate untouched).
       - title: Working Student
         org: Synopsys Inc.
+        url: https://www.synopsys.com/
         start: 'Mar – Jun 2016 and Aug – Nov 2016'
         note: Quality Assurance & Development
-        minor: true
+
+  - id: awards
+    heading: Awards & recognition
+    # Mirrors "Qualifications and Awards" on the KIT staff page.
+    entries:
+      - title: 'Best mandatory exercise: Software Engineering II'
+        org: KIT Department of Informatics
+        start: '2025'
+        note: Teaching Award (Lehrpreis)
+      - title: 'Best mandatory lecture: Software Engineering II'
+        org: KIT Department of Informatics
+        start: '2025'
+        note: Teaching Award (Lehrpreis)
+      - title: Microsoft Imagine Cup — 3rd place, German national final
+        org: Microsoft
+        start: '2016'
 
   - id: education
     heading: Education
@@ -77,6 +92,28 @@ sections:
         start: '2013'
         end: '2018'
         note: 'Thesis: Erweiterung der Sprachdomäne durch das Erlernen von Synonymen basierend auf dem Dialogsystem JustLingo'
+
+  - id: projects
+    heading: Projects
+    layout: cards
+    entries:
+      - title: KASTEL Security Research Labs
+        url: https://kastel-labs.de/
+        note: >-
+          Topic Energy System Security: secure software engineering for energy
+          systems, e.g. the open-source EV charging stack EVerest.
+        highlights: [Secure software engineering, Assumption management]
+      - title: ARDoCo
+        url: https://ardoco.de/
+        note: >-
+          Automating Requirements and Documentation Comprehension: trace links
+          and consistency between documentation, models and code.
+        highlights: [Traceability, Requirements engineering]
+      - title: µDevOps
+        note: >-
+          EU Horizon 2020 RISE project on software quality assurance for
+          microservice DevOps.
+        highlights: [DevOps]
 
   - id: teaching
     heading: Teaching
@@ -105,44 +142,6 @@ sections:
       - title: Undergraduate Seminar Software Disasters
         semester: 'SS 2022'
       - title: Supervision of 15+ bachelor's and master's theses
-
-  - id: projects
-    heading: Projects
-    layout: cards
-    entries:
-      - title: KASTEL Security Research Labs
-        url: https://kastel-labs.de/
-        note: >-
-          Topic Energy System Security: secure software engineering for energy
-          systems, e.g. the open-source EV charging stack EVerest.
-        highlights: [Secure software engineering, Assumption management]
-      - title: ARDoCo
-        url: https://ardoco.de/
-        note: >-
-          Automating Requirements and Documentation Comprehension: trace links
-          and consistency between documentation, models and code.
-        highlights: [Traceability, Requirements engineering]
-      - title: µDevOps
-        note: >-
-          EU Horizon 2020 RISE project on software quality assurance for
-          microservice DevOps.
-        highlights: [DevOps]
-
-  - id: awards
-    heading: Awards & recognition
-    # Mirrors "Qualifications and Awards" on the KIT staff page.
-    entries:
-      - title: 'Best mandatory exercise: Software Engineering II'
-        org: KIT Department of Informatics
-        start: '2025'
-        note: Teaching Award (Lehrpreis)
-      - title: 'Best mandatory lecture: Software Engineering II'
-        org: KIT Department of Informatics
-        start: '2025'
-        note: Teaching Award (Lehrpreis)
-      - title: Microsoft Imagine Cup — 3rd place, German national final
-        org: Microsoft
-        start: '2016'
 
   - id: certificates
     heading: Certificates
