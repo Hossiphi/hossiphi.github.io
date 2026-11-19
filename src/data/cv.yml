@@ -9,11 +9,14 @@
 # the email only.
 
 summary: >-
-  A researcher at the Karlsruhe Institute of Technology since 2020. In my
-  research, I make security knowledge explicit throughout the software life
-  cycle: security requirements, the assumptions a system's security rests on,
-  and the trace links that connect them to architecture and code. Currently, I
-  apply this to energy systems within the KASTEL Security Research Labs.
+  Doctoral researcher at the Karlsruhe Institute of Technology since 2020, in
+  the group of Prof. Anne Koziolek. My research makes security knowledge
+  explicit throughout the software life cycle: security requirements, the
+  assumptions a system's security rests on, and their trace links to
+  architecture and code, currently applied to energy systems within the KASTEL
+  Security Research Labs. I teach Software Engineering II (KIT teaching award
+  2025), supervise seminars, practical courses and theses, and review for
+  venues such as ICSE, FSE, ASE and ICSA.
 
 interests:
   - Secure software engineering
