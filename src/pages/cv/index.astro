@@ -170,7 +170,14 @@ const more = (count: number) => fill(label('more'), { count });
                     <span class="when mono">{dateRange(entry, present)}</span>
                     <div class="what">
                       <h3>
-                        {entry.title}
+                        {entry.url && !entry.org ? (
+                          <a href={entry.url} rel="noopener">
+                            {entry.title}
+                          </a>
+                        ) : (
+                          entry.title
+                        )}
+                        {entry.semester && <span class="terms mono">({entry.semester})</span>}
                         {isCurrent(entry) && <span class="now mono">{label('now')}</span>}
                       </h3>
                       {entry.org && (
@@ -216,7 +223,14 @@ const more = (count: number) => fill(label('more'), { count });
                         <span class="when mono">{dateRange(entry, present)}</span>
                         <div class="what">
                           <h3>
-                            {entry.title}
+                            {entry.url && !entry.org ? (
+                              <a href={entry.url} rel="noopener">
+                                {entry.title}
+                              </a>
+                            ) : (
+                              entry.title
+                            )}
+                            {entry.semester && <span class="terms mono">({entry.semester})</span>}
                             {isCurrent(entry) && <span class="now mono">{label('now')}</span>}
                           </h3>
                           {entry.org && (
@@ -391,6 +405,11 @@ const more = (count: number) => fill(label('more'), { count });
     background: var(--sec-dim);
     color: var(--sec);
     font-size: var(--fs-mono);
+    font-weight: 400;
+  }
+  /* A row's terms after its title, in the date rail's face. */
+  .what .terms {
+    color: var(--text-faint);
     font-weight: 400;
   }
   .where {

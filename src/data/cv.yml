@@ -81,26 +81,36 @@ sections:
   - id: teaching
     heading: Teaching
     # Summarised from the Teaching tab on the KIT staff page: one entry per
-    # course, its terms in brackets, newest first; links go to the newest term.
+    # course, newest first; `semester` holds its terms (shown in brackets in the
+    # date face, a local template change); links go to the newest term.
     entries:
-      - title: Software Engineering II (since WS 22/23)
+      - title: Software Engineering II
+        semester: 'since WS 22/23'
         url: https://mcse.kastel.kit.edu/staff_1207.php
         note: Teaching assistant for the exercises
-      - title: 'Seminar: Software Architecture, Security and Privacy (WS 26/27)'
+      - title: 'Seminar: Software Architecture, Security and Privacy'
+        semester: 'WS 26/27'
         url: https://mcse.kastel.kit.edu/staff_1205.php
-      - title: Proseminar Dependability of Software-intensive Technical Systems (SS 2026)
+      - title: Proseminar Dependability of Software-intensive Technical Systems
+        semester: 'SS 2026'
         url: https://mcse.kastel.kit.edu/staff_1203.php
-      - title: Practical Course Developing Software as an Engineer (SS 2024)
+      - title: Practical Course Developing Software as an Engineer
+        semester: 'SS 2024'
         url: https://mcse.kastel.kit.edu/staff_1201.php
-      - title: Seminar Continuous Software Engineering (WS 23/24)
+      - title: Seminar Continuous Software Engineering
+        semester: 'WS 23/24'
         url: https://mcse.kastel.kit.edu/staff_1195.php
-      - title: 'Practical Course: Tools for Agile Modelling (WS 22/23, SS 2023, WS 23/24)'
+      - title: 'Practical Course: Tools for Agile Modelling'
+        semester: 'WS 22/23, SS 2023, WS 23/24'
         url: https://mcse.kastel.kit.edu/staff_1197.php
-      - title: Seminar Data in Software-Intensive Technical Systems - Modeling - Analysis - Protection (WS 22/23)
+      - title: Seminar Data in Software-Intensive Technical Systems - Modeling - Analysis - Protection
+        semester: 'WS 22/23'
         url: https://mcse.kastel.kit.edu/staff_710.php
-      - title: Proseminar Software Requirements and Design (SS 2021, SS 2023)
+      - title: Proseminar Software Requirements and Design
+        semester: 'SS 2021, SS 2023'
         url: https://mcse.kastel.kit.edu/staff_1199.php
-      - title: Undergraduate Seminar Software Disasters (SS 2022)
+      - title: Undergraduate Seminar Software Disasters
+        semester: 'SS 2022'
         url: https://mcse.kastel.kit.edu/staff_707.php
       - title: Supervision of 15+ bachelor's and master's theses
 
