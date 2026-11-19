@@ -1,22 +1,24 @@
 # The CV. /cv/ renders this file and nothing else. Field reference: src/lib/cv.ts
 # (or the comment block at the top of upstream's cv.yml). Structure follows
-# fuchss.org/cv: Experience, Education, Teaching, Projects, Awards, Community
-# Services, Certificates, Languages. Source of the facts: wiki page
-# "Sophie Corallo CV" (birth date, address and family stay off the website).
+# fuchss.org/cv: Experience, Education, Teaching, Projects, Awards,
+# Certificates, Languages. Source of the facts: wiki page "Sophie Corallo CV"
+# (birth date, address and the child's details stay off the website).
 #
 # The current position uses `end: present` rather than `current: true`: the
 # latter would also add a "where" row to the contact block, which should show
 # the email only.
 
 summary: >-
-  Doctoral researcher at the Karlsruhe Institute of Technology since 2020, in
-  the group of Prof. Anne Koziolek. My research makes security knowledge
-  explicit throughout the software life cycle: security requirements, the
-  assumptions a system's security rests on, and their trace links to
-  architecture and code, currently applied to energy systems within the KASTEL
-  Security Research Labs. I teach Software Engineering II (KIT teaching award
-  2025), supervise seminars, practical courses and theses, and review for
-  venues such as ICSE, FSE, ASE and ICSA.
+  I am a doctoral researcher at the Karlsruhe Institute of Technology (KIT),
+  where I have been working in the group of Prof. Anne Koziolek since 2020. In
+  my research, I make security knowledge explicit throughout the software life
+  cycle: security requirements, the assumptions a system's security rests on,
+  and the trace links that connect them to architecture and code. Currently, I
+  apply this to energy systems within the KASTEL Security Research Labs. Besides
+  research, I teach: since 2022, I have been the teaching assistant for
+  Software Engineering II, which received the KIT teaching award in 2025, and I
+  supervise seminars, practical courses and theses. Outside of work, I am a
+  mother.
 
 interests:
   - Secure software engineering
@@ -78,74 +80,29 @@ sections:
 
   - id: teaching
     heading: Teaching
-    layout: courses
-    count: course|courses
-    # Mirrors the Teaching tab on the KIT staff page (links to its course pages).
+    # Summarised from the Teaching tab on the KIT staff page: one entry per
+    # course, its terms in brackets, newest first; links go to the newest term.
     entries:
-      - title: 'Seminar: Software Architecture, Security and Privacy'
-        type: Seminar
-        semester: 'WS 26/27'
-        url: https://mcse.kastel.kit.edu/staff_1205.php
-      - title: Software Engineering II
-        type: Lecture
-        semester: 'SS 2026'
+      - title: Software Engineering II (since WS 22/23)
         url: https://mcse.kastel.kit.edu/staff_1207.php
-      - title: Proseminar Dependability of Software-intensive Technical Systems
-        type: Proseminar
-        semester: 'SS 2026'
+        note: Teaching assistant for the exercises
+      - title: 'Seminar: Software Architecture, Security and Privacy (WS 26/27)'
+        url: https://mcse.kastel.kit.edu/staff_1205.php
+      - title: Proseminar Dependability of Software-intensive Technical Systems (SS 2026)
         url: https://mcse.kastel.kit.edu/staff_1203.php
-      - title: Software Engineering II
-        type: Lecture
-        semester: 'SS 2025'
-        url: https://mcse.kastel.kit.edu/staff_1208.php
-      - title: Software Engineering II
-        type: Lecture
-        semester: 'WS 24/25'
-        url: https://mcse.kastel.kit.edu/staff_1211.php
-      - title: Practical Course Developing Software as an Engineer
-        type: Practical course
-        semester: 'SS 2024'
+      - title: Practical Course Developing Software as an Engineer (SS 2024)
         url: https://mcse.kastel.kit.edu/staff_1201.php
-      - title: Software Engineering II
-        type: Lecture
-        semester: 'WS 23/24'
-        url: https://mcse.kastel.kit.edu/staff_1209.php
-      - title: Continuous Software Engineering
-        type: Seminar
-        semester: 'WS 23/24'
+      - title: Seminar Continuous Software Engineering (WS 23/24)
         url: https://mcse.kastel.kit.edu/staff_1195.php
-      - title: 'Practical Course: Tools for Agile Modelling'
-        type: Practical course
-        semester: 'WS 23/24'
+      - title: 'Practical Course: Tools for Agile Modelling (WS 22/23, SS 2023, WS 23/24)'
         url: https://mcse.kastel.kit.edu/staff_1197.php
-      - title: Proseminar Software Requirements and Design
-        type: Proseminar
-        semester: 'SS 2023'
-        url: https://mcse.kastel.kit.edu/staff_1199.php
-      - title: 'Practical Course: Tools for Agile Modelling'
-        type: Practical course
-        semester: 'SS 2023'
-        url: https://mcse.kastel.kit.edu/staff_1196.php
-      - title: Software Engineering II
-        type: Lecture
-        semester: 'WS 22/23'
-        url: https://mcse.kastel.kit.edu/staff_697.php
-      - title: Data in Software-Intensive Technical Systems - Modeling - Analysis - Protection
-        type: Seminar
-        semester: 'WS 22/23'
+      - title: Seminar Data in Software-Intensive Technical Systems - Modeling - Analysis - Protection (WS 22/23)
         url: https://mcse.kastel.kit.edu/staff_710.php
-      - title: 'Practical Course: Tools for Agile Modelling'
-        type: Practical course
-        semester: 'WS 22/23'
-        url: https://mcse.kastel.kit.edu/staff_709.php
-      - title: Undergraduate Seminar Software Disasters
-        type: Proseminar
-        semester: 'SS 2022'
+      - title: Proseminar Software Requirements and Design (SS 2021, SS 2023)
+        url: https://mcse.kastel.kit.edu/staff_1199.php
+      - title: Undergraduate Seminar Software Disasters (SS 2022)
         url: https://mcse.kastel.kit.edu/staff_707.php
-      - title: Proseminar Software Requirements and Design
-        type: Proseminar
-        semester: 'SS 2021'
-        url: https://mcse.kastel.kit.edu/staff_705.php
+      - title: Supervision of 15+ bachelor's and master's theses
 
   - id: projects
     heading: Projects
@@ -184,28 +141,6 @@ sections:
       - title: Microsoft Imagine Cup — 3rd place, German national final
         org: Microsoft
         start: '2016'
-
-  - id: service
-    heading: Community Services
-    # Venue, year and track only; never the reviewer role (wiki Rule).
-    entries:
-      - title: Reviews
-        details:
-          - FSE 2027
-          - ICSE 2026, Software Engineering in Practice (SEIP)
-          - ICSA 2025
-          - RE@Next! 2025
-          - ICSE 2024, New Ideas and Emerging Results (NIER)
-          - ICPE 2024
-          - ASE 2023
-          - ICSA 2023
-          - ICSE 2023, New Ideas and Emerging Results (NIER)
-          - ICSA 2022, Artifact Evaluation Track
-          - ICSE 2022
-      - title: Board member
-        org: Universitäts-Karate-Dojo e.V.
-        start: '2018-11'
-        end: '2020-01'
 
   - id: certificates
     heading: Certificates
