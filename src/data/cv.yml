@@ -1,12 +1,12 @@
 # The CV. /cv/ renders this file and nothing else. Field reference: src/lib/cv.ts
 # (or the comment block at the top of upstream's cv.yml). Structure follows
-# fuchss.org/cv: Experience, Education, Teaching, Projects, Awards, Certificates.
+# fuchss.org/cv: Experience, Education, Teaching, Projects, Awards, Community
+# Services, Certificates, Languages. Source of the facts: wiki page
+# "Sophie Corallo CV" (birth date, address and family stay off the website).
 #
 # The current position uses `end: present` rather than `current: true`: the
 # latter would also add a "where" row to the contact block, which should show
 # the email only.
-#
-# TODO(Sophie): add your Bachelor's degree and anything else missing.
 
 summary: >-
   A researcher at the Karlsruhe Institute of Technology since 2020. In my
@@ -25,12 +25,40 @@ sections:
   - id: experience
     heading: Experience
     entries:
-      - title: Researcher
+      - title: Doctoral Researcher
         org: Karlsruhe Institute of Technology
         url: https://mcse.kastel.kit.edu/staff_sophie_corallo.php
         start: '2020-11'
         end: present
-        note: Research & Teaching
+        note: Research group of Prof. Dr.-Ing. Anne Koziolek
+        details:
+          - Research on requirements engineering, software architecture, natural language processing, and traceability link recovery
+          - Development and maintenance of open-source tooling for security requirements validation and traceability link recovery
+          - Teaching assistant for Software Engineering II; supervision of 10+ practical courses and (pro-)seminars and 15+ bachelor's and master's theses
+      - title: Working Student
+        org: ESCde GmbH
+        start: '2019-04'
+        end: '2019-08'
+        note: Development Specialist for complex AI solutions
+        minor: true
+      - title: Tutor
+        org: Karlsruhe Institute of Technology
+        start: '2017-10'
+        end: '2018-03'
+        note: Theoretical Foundations of Informatics
+        minor: true
+      - title: Working Student
+        org: Synopsys Inc.
+        start: '2016-08'
+        end: '2016-11'
+        note: Quality Assurance & Development
+        minor: true
+      - title: Working Student
+        org: Synopsys Inc.
+        start: '2016-03'
+        end: '2016-06'
+        note: Quality Assurance & Development
+        minor: true
 
   - id: education
     heading: Education
@@ -39,8 +67,16 @@ sections:
         org: Karlsruhe Institute of Technology
         url: https://www.kit.edu/
         location: Karlsruhe, Germany
+        start: '2018'
         end: '2020'
         note: 'Thesis: Linking Software Architecture Documentation and Models'
+      - title: B.Sc. in Informatics
+        org: Karlsruhe Institute of Technology
+        url: https://www.kit.edu/
+        location: Karlsruhe, Germany
+        start: '2013'
+        end: '2018'
+        note: 'Thesis: Erweiterung der Sprachdomäne durch das Erlernen von Synonymen basierend auf dem Dialogsystem JustLingo'
 
   - id: teaching
     heading: Teaching
@@ -142,12 +178,36 @@ sections:
       - title: 'Best mandatory exercise: Software Engineering II'
         org: KIT Department of Informatics
         start: '2025'
+        note: Teaching Award (Lehrpreis)
       - title: 'Best mandatory lecture: Software Engineering II'
         org: KIT Department of Informatics
         start: '2025'
+        note: Teaching Award (Lehrpreis)
       - title: Microsoft Imagine Cup — 3rd place, German national final
         org: Microsoft
         start: '2016'
+
+  - id: service
+    heading: Community Services
+    # Venue, year and track only; never the reviewer role (wiki Rule).
+    entries:
+      - title: Reviews
+        details:
+          - FSE 2027
+          - ICSE 2026, Software Engineering in Practice (SEIP)
+          - ICSA 2025
+          - RE@Next! 2025
+          - ICSE 2024, New Ideas and Emerging Results (NIER)
+          - ICPE 2024
+          - ASE 2023
+          - ICSA 2023
+          - ICSE 2023, New Ideas and Emerging Results (NIER)
+          - ICSA 2022, Artifact Evaluation Track
+          - ICSE 2022
+      - title: Board member
+        org: Universitäts-Karate-Dojo e.V.
+        start: '2018-11'
+        end: '2020-01'
 
   - id: certificates
     heading: Certificates
@@ -156,3 +216,11 @@ sections:
         org: Scrum.org
       - title: Professional Scrum Master I
         org: Scrum.org
+
+  - id: languages
+    heading: Languages
+    entries:
+      - title: German
+        note: Native
+      - title: English
+        note: Fluent
